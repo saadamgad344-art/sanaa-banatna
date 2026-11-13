@@ -1,0 +1,21 @@
+<header class="site-nav">
+  <div class="nav-inner">
+    <a routerLink="/" class="logo">سنع <span>بناتنا</span></a>
+
+    <nav class="nav-links" [class.open]="isMenuOpen">
+      <a routerLink="/" (click)="isMenuOpen = false">الرئيسية</a>
+      <a routerLink="/" fragment="about" (click)="isMenuOpen = false">من نحن</a>
+      <a routerLink="/" fragment="menu" (click)="isMenuOpen = false">المنتجات</a>
+      <a routerLink="/" fragment="branches" (click)="isMenuOpen = false">الفروع</a>
+      <a routerLink="/" fragment="gallery" (click)="isMenuOpen = false">معرض الصور</a>
+      <a routerLink="/" fragment="contact" (click)="isMenuOpen = false">تواصل معنا</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a routerLink="/" fragment="contact" class="btn-primary">اطلب الآن</a>
+      <button class="burger" (click)="toggleMenu()" aria-label="فتح القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>

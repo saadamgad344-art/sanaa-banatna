@@ -1,0 +1,30 @@
+<section class="branches-section" id="branches">
+  <div class="branches-inner">
+    <div class="section-head">
+      <h2>فروعنا</h2>
+      <p>فروعنا تخدمكم في الرياض ورماح وضرما والدمام، بمنتجات طازجة يوميًا.</p>
+    </div>
+
+    <div class="branches-grid">
+      @for (branch of branches; track branch.slug) {
+        <a
+          class="branch-card"
+          [class.featured]="branch.isMain"
+          [routerLink]="['/branches', branch.slug]">
+         <div class="branch-photo">
+  <img [src]="branch.heroImage" [alt]="branch.name">
+  <span class="city-tag">{{ branch.city }}</span>
+</div>
+          <div class="branch-info">
+            <h3>{{ branch.name }}</h3>
+            <div class="branch-meta">
+              <span>{{ branch.address }}</span>
+              <span>{{ branch.workingHours }}</span>
+            </div>
+            <span class="link-text">عرض الفرع ←</span>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>

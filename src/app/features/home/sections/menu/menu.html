@@ -1,0 +1,39 @@
+<section class="menu-section" id="menu">
+  <div class="menu-inner">
+    <div class="section-head">
+      <h2>منتجاتنا</h2>
+      <p>تشكيلة متكاملة من الحلويات والمعجنات، مُعدّة يوميًا لتناسب ضيافتكم.</p>
+    </div>
+
+    <div class="cat-row">
+      @for (cat of categories; track cat) {
+        <button
+          class="cat-chip"
+          [class.active]="activeCategory() === cat"
+          (click)="setCategory(cat)">
+          {{ cat }}
+        </button>
+      }
+    </div>
+
+    <div class="grid-3">
+  @for (product of filteredProducts; track product.image) {
+    <div class="product-card">
+      <div class="p-photo">
+        <img [src]="product.image" [alt]="product.name" loading="lazy">
+      </div>
+      <div class="p-body">
+        <div class="cat">{{ product.category }}</div>
+        <h3>{{ product.name }}</h3>
+        @if (product.description) {
+          <p>{{ product.description }}</p>
+        }
+        <div class="p-foot">
+          <span class="price">{{ product.price }} ر.س</span>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<section class="gallery-section" id="gallery">
+  <div class="gallery-inner">
+    <div class="section-head">
+      <h2>معرض الصور</h2>
+      <p>لقطات من مطبخنا وفروعنا — تابعونا على إنستقرام لمزيد من التفاصيل.</p>
+    </div>
+
+    <div class="gallery-grid">
+      @for (img of visibleImages(); track img; let i = $index) {
+        <img class="g-item" [src]="img" [alt]="'صورة من معرض سنع بناتنا ' + (i + 1)" loading="lazy">
+      }
+    </div>
+
+    @if (hasMore()) {
+      <div class="gallery-more">
+        <button class="btn btn-ghost" (click)="showMore()">عرض المزيد من الصور</button>
+      </div>
+    }
+  </div>
+</section>

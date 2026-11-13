@@ -1,0 +1,45 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <h4>سنع بناتنا</h4>
+        <p>حلويات ومعجنات بيتية أصيلة، من قلب المطبخ السعودي إلى طاولتكم.</p>
+      </div>
+
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#menu">المنتجات</a></li>
+          <li><a href="#branches">الفروع</a></li>
+          <li><a href="#gallery">معرض الصور</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>الفروع</h4>
+        <ul>
+          @for (branch of branches; track branch.slug) {
+            <li><a [routerLink]="['/branches', branch.slug]">{{ branch.name }} — {{ branch.city }}</a></li>
+          }
+        </ul>
+      </div>
+
+<div>
+  <h4>تواصل معنا</h4>
+  <ul>
+    <li>
+      <a [href]="whatsappLink" target="_blank" rel="noopener">
+        واتساب: <span dir="ltr">{{ whatsappNumber }}</span>
+      </a>
+    </li>
+    <li><a [href]="social.instagram" target="_blank" rel="noopener">إنستقرام</a></li>
+    <li><a [href]="social.tiktok" target="_blank" rel="noopener">تيك توك</a></li>
+    <li><a [href]="social.snapchat" target="_blank" rel="noopener">سناب شات</a></li>
+  </ul>
+</div>
+    </div>
+
+    <div class="footer-bottom">© 2026 سنع بناتنا. جميع الحقوق محفوظة.</div>
+  </div>
+</footer>

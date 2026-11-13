@@ -1,0 +1,232 @@
+.branch-hero {
+  padding: 50px 28px 0;
+}
+
+.branch-hero-inner, .map-inner, .other-branches-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  font-size: 13.5px;
+  color: #5A4536;
+  margin-bottom: 22px;
+
+  a { color: #8C4F1E; }
+}
+
+.branch-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 50px;
+  align-items: center;
+  padding-bottom: 70px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  font-size: 13px;
+  color: #8C4F1E;
+  background: #E8C79A;
+  padding: 7px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+h1 { font-size: clamp(34px, 5vw, 48px); margin-bottom: 10px; }
+
+.city-line {
+  font-family: 'El Messiri', serif;
+  color: #8C4F1E;
+  font-size: 19px;
+  margin-bottom: 22px;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.info-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+
+  .ic {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: #E8C79A;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #8C4F1E;
+  }
+
+  strong { display: block; font-size: 15px; margin-bottom: 2px; }
+  span { font-size: 14px; color: #5A4536; }
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.branch-photo-lg {
+  aspect-ratio: 4/3.4;
+  border-radius: 26px;
+  box-shadow: 0 18px 40px -22px rgba(43, 27, 18, 0.35);
+  background:
+    radial-gradient(circle at 25% 20%, #E8C79A, transparent 45%),
+    linear-gradient(150deg, #3A2416, #B9702E);
+  object-fit: cover;
+  width: 100%;
+}
+
+.map-section, .other-branches-section {
+  padding: 60px 28px;
+}
+
+.section-head { margin-bottom: 30px; }
+.section-head h2 { font-size: clamp(28px, 3.6vw, 34px); }
+
+.map-block {
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 16/6;
+  background: repeating-linear-gradient(45deg, #E3D2B4 0 2px, #F7F1E6 2px 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.other-branches {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.mini-branch {
+  flex: none;
+  width: 230px;
+  background: #FFFCF6;
+  border-radius: 18px;
+  padding: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: .25s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -22px rgba(43, 27, 18, 0.35);
+  }
+
+  .mb-photo {
+  aspect-ratio: 16/10;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #8C4F1E, #E8C79A);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+  h4 { font-size: 15px; margin-bottom: 4px; }
+  span { font-size: 13px; color: #5A4536; }
+}
+
+.map-embed {
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 16/6;
+  margin-bottom: 20px;
+}
+
+.open-maps-btn {
+  display: inline-flex;
+}
+.branch-gallery-section {
+  padding: 0 28px 60px;
+}
+
+.branch-gallery-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.branch-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.bg-item {
+  border: 0;
+  padding: 0;
+  cursor: zoom-in;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #C98A45, #6B3F1F);
+  aspect-ratio: 4/3;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .3s ease;
+  }
+
+  &:hover img { transform: scale(1.04); }
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(34, 19, 9, .92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 14px;
+    object-fit: contain;
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(232, 199, 154, .5);
+  background: transparent;
+  color: #F7F1E6;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .branch-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .branch-hero-grid { grid-template-columns: 1fr; }
+}
